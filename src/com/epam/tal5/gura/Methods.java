@@ -6,7 +6,7 @@ import java.util.Random;
 public class Methods {
 	
 	
-	
+	//-------TASK1
 	public String greet(String[] args){
 		
 		
@@ -167,4 +167,27 @@ public class Methods {
 		
 		
 	}
+
+	public void halfSum(String[] args){
+		
+		int[] mas = new int[args.length];
+		for(int i=0;i<args.length; i++)
+		{
+			mas[i]=Integer.parseInt(args[i]);
+		}
+		
+		String res="";
+		
+		for(int i=1;i<mas.length-1; i++)
+		{
+			if(mas[i]==((mas[i-1]+mas[i+1])/2)) res+=mas[i]+" ";
+		}
+		
+		System.out.println("HALFSUM - "+res );
+	}
+
+
+	
+	//-------TASK2
+
 }

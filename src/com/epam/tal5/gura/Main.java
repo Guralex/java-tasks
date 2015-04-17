@@ -57,8 +57,8 @@ public class Main {
 		 
 		 
 		 System.out.println(Arrays.toString(args));
-		 met.numberWork(args);
-		 System.out.println("Finishq");
+		 met.halfSum(args);
+		 System.out.println("Finish");
 		
 	 }
 	
