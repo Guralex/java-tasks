@@ -245,19 +245,8 @@ public class Methods {
 		System.out.println("SORT " + Arrays.toString(mas));
 	}
 
-	public void showMoreThanAv(String[] args){
-		
-		int[] mas = parseArgs(args);
-		int[][] res = new int[mas.length][];			
-		
-		
-		for(int i=0;i<mas.length; i++)
-		{
-			res[i] = parseNum(mas[i]);
-		}
-		
-		
-		
-	}
+	
+	
+	
 	
 }
