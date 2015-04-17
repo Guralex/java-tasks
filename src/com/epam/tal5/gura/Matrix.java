@@ -46,28 +46,32 @@ public void RowSort(int [][] matr){
     }
 }
 
-public void moveUp(int [][] matr){
+public void moveUp(int [][] matr,int num){
 	
+	for(int a=0;a<num;a++){ 
 	int [] temp = new int[matr.length];
 	int i=0;
 	temp=matr[0];
 	for(;i<matr.length-1;i++) matr[i]=matr[i+1];
 	
-	matr[i]=temp;
+	matr[i]=temp;}
 }
 
-public void moveDown(int [][] matr){
+public void moveDown(int [][] matr,int num){
+	
+	for(int a=0;a<num;a++){ 
 	
 	int [] temp = new int[matr.length];
 	
 	temp=matr[matr.length-1];
 	for(int i=matr.length-1;i>0;i--) matr[i]=matr[i-1];
 	
-	matr[0]=temp;
+	matr[0]=temp;}
 }
 
-public void moveRight(int [][] matr){
+public void moveRight(int [][] matr,int num){
 	
+	for(int a=0;a<num;a++){ 
 	int temp;
 	for(int i=0;i<matr.length-1;i++) 
 	{
@@ -75,11 +79,13 @@ public void moveRight(int [][] matr){
 		for(int j=matr[i].length-1;j>0;j--) matr[i][j]=matr[i][j-1];
 		matr[i][0]=temp;
 	}
+	}
 	
 }
 
-public void moveLeft(int [][] matr){
+public void moveLeft(int [][] matr,int num){
 	
+	for(int a=0;a<num;a++){ 
 	int temp;
 	for(int i=0;i<matr.length-1;i++) 
 	{
@@ -87,7 +93,7 @@ public void moveLeft(int [][] matr){
 		temp = matr[i][0];
 		for(;j<matr[i].length-1;j++) matr[i][j]=matr[i][j+1];
 		matr[i][j]=temp;
-	}
+	}}
 	
 }
 

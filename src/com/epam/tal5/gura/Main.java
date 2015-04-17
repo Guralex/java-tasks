@@ -63,10 +63,10 @@ public class Main {
 		 matr.Print(m);
 		 System.out.println("-----------------------------");
 		 
-		 matr.moveLeft(m);
-		 matr.moveRight(m);
-		 matr.moveUp(m);
-		 matr.moveDown(m);
+		 matr.moveLeft(m,2);
+		 matr.moveRight(m,2);
+		 matr.moveUp(m,2);
+		 matr.moveDown(m,2);
 		 
 		 matr.Print(m);
 		
