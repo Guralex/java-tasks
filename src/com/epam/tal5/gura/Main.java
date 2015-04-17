@@ -57,7 +57,7 @@ public class Main {
 		 
 		 
 		 System.out.println(Arrays.toString(args));
-		 met.halfSum(args);
+		 met.sortBySize(args);
 		 System.out.println("Finish");
 		
 	 }

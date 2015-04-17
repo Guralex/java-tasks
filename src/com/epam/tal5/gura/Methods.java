@@ -5,6 +5,40 @@ import java.util.Random;
 
 public class Methods {
 	
+	public int[] parseNum (int num )
+	{
+		
+		int k=1,count=1;
+		
+		while(true){
+			if(num/k>=10){count++;k*=10; continue;}
+			else break;
+		}
+		
+		int[] resmas = new int[count];
+		
+		for(int i = count-1; i >= 0; i--) {
+            resmas[i] = num % 10;
+            num = num / 10;
+        }
+		
+			 
+		
+		return resmas;
+	}
+	
+	public int[] parseArgs(String[] args){
+		
+		int[] mas = new int[args.length];
+		for(int i=0;i<args.length; i++)
+		{
+			mas[i]=Integer.parseInt(args[i]);
+		}
+		
+		return mas;
+		
+	}
+	
 	
 	//-------TASK1
 	public String greet(String[] args){
@@ -51,11 +85,7 @@ public class Methods {
 	public void aLotOfTasks(String[] args){
 		
 		//----------------------------------
-		int[] mas = new int[args.length];
-		for(int i=0;i<args.length; i++)
-		{
-			mas[i]=Integer.parseInt(args[i]);
-		}
+		int[] mas = parseArgs(args);
 		//1----------------------------------
 		
 		String res1="",res2="";
@@ -92,35 +122,10 @@ public class Methods {
 		
 	}
 	
-	public int[] parseNum (int num )
-	{
 		
-		int k=1,count=1;
-		
-		while(true){
-			if(num/k>=10){count++;k*=10; continue;}
-			else break;
-		}
-		
-		int[] resmas = new int[count];
-		
-		for(int i = count-1; i >= 0; i--) {
-            resmas[i] = num % 10;
-            num = num / 10;
-        }
-		
-			 
-		
-		return resmas;
-	}
-	
 	public void numberWork(String[] args){
 	//-------------	
-		int[] mas = new int[args.length];
-		for(int i=0;i<args.length; i++)
-		{
-			mas[i]=Integer.parseInt(args[i]);
-		}
+		int[] mas = parseArgs(args);
 		
 	//------------
 		int[][] res = new int[mas.length][];
@@ -170,11 +175,7 @@ public class Methods {
 
 	public void halfSum(String[] args){
 		
-		int[] mas = new int[args.length];
-		for(int i=0;i<args.length; i++)
-		{
-			mas[i]=Integer.parseInt(args[i]);
-		}
+		int[] mas = parseArgs(args);
 		
 		String res="";
 		
@@ -190,4 +191,73 @@ public class Methods {
 	
 	//-------TASK2
 
+	public void shortAndLongNum(String[] args){
+		
+		int[] mas = parseArgs(args);
+		
+		int[][] res = new int[mas.length][];
+		
+		for(int i=0;i<mas.length; i++)
+		{
+			res[i] = parseNum(mas[i]);
+		}
+		
+		int Min=Integer.SIZE, Max=0,indexMin=0,indexMax=0;
+		
+		for(int i=0;i<res.length; i++)
+		{
+			if(res[i].length<Min) {indexMin=i;Min=res[i].length ;}
+			if(res[i].length>Max) {indexMax=i;Max=res[i].length ; }
+			
+		}
+		
+		System.out.println("THE LONGEST -" + mas[indexMax] + " LENGHT - "+ Max);
+		System.out.println("THE SHORTEST -" + mas[indexMin] + " LENGHT - "+ Min);
+		
+		
+	}
+	
+	
+	public void sortBySize(String[] args){
+		
+		int[] mas = parseArgs(args);
+		int[][] res = new int[mas.length][];			
+		
+		
+		for(int i=0;i<mas.length; i++)
+		{
+			res[i] = parseNum(mas[i]);
+		}
+		
+		
+		
+		
+		for (int i = 0; i < mas.length-1; i++){
+	        for (int j = i+1; j < mas.length; j++){
+	            if (res[i].length < res[j].length) {
+	                int t = mas[i];
+	                mas[i] = mas[j];
+	                mas[j] = t;
+	            }
+	        }
+	    }
+		
+		System.out.println("SORT " + Arrays.toString(mas));
+	}
+
+	public void showMoreThanAv(String[] args){
+		
+		int[] mas = parseArgs(args);
+		int[][] res = new int[mas.length][];			
+		
+		
+		for(int i=0;i<mas.length; i++)
+		{
+			res[i] = parseNum(mas[i]);
+		}
+		
+		
+		
+	}
+	
 }
