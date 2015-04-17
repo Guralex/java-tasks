@@ -10,6 +10,10 @@ public class Main {
 		 
 		 Sort sort=new Sort();
 		 
+		 Matrix matr = new Matrix();
+		 
+		 int[][] m = matr.matrixInit(args);
+		 
 	//System.out.println(met.greet(args));
 	
 	//System.out.println(met.backorder(args));
@@ -56,9 +60,12 @@ public class Main {
 		 System.out.println("BUB TIME -"+(aft-bef));*/
 		 
 		 
-		 System.out.println(Arrays.toString(args));
-		 met.sortBySize(args);
-		 System.out.println("Finish");
+		 matr.matrixPrint(m);
+		 System.out.println("-----------------------------");
+		 
+		 matr.matrixRowSort(m);
+		 
+		 matr.matrixPrint(m);
 		
 	 }
 	
