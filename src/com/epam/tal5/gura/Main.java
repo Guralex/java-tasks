@@ -58,7 +58,7 @@ public class Main {
 		 
 		 System.out.println(Arrays.toString(args));
 		 met.numberWork(args);
-		 
+		 System.out.println("Finish");
 		
 	 }
 	
