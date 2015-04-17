@@ -12,7 +12,7 @@ public class Main {
 		 
 		 Matrix matr = new Matrix();
 		 
-		 int[][] m = matr.matrixInit(args);
+		 int[][] m = matr.Init(args);
 		 
 	//System.out.println(met.greet(args));
 	
@@ -60,12 +60,15 @@ public class Main {
 		 System.out.println("BUB TIME -"+(aft-bef));*/
 		 
 		 
-		 matr.matrixPrint(m);
+		 matr.Print(m);
 		 System.out.println("-----------------------------");
 		 
-		 matr.matrixRowSort(m);
+		 matr.moveLeft(m);
+		 matr.moveRight(m);
+		 matr.moveUp(m);
+		 matr.moveDown(m);
 		 
-		 matr.matrixPrint(m);
+		 matr.Print(m);
 		
 	 }
 	

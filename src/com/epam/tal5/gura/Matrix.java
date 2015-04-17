@@ -7,7 +7,7 @@ public class Matrix {
 
 	
 	
-public int[][] matrixInit(String[] args){
+public int[][] Init(String[] args){
 		
 		
 		Random rand = new Random();
@@ -21,7 +21,7 @@ public int[][] matrixInit(String[] args){
 		return matr;
 	}
 
-public void matrixPrint(int [][] matr){
+public void Print(int [][] matr){
 	
 	for(int i=0;i<matr.length;i++)
 		{
@@ -32,7 +32,7 @@ public void matrixPrint(int [][] matr){
 	
 }
 
-public void matrixRowSort(int [][] matr){
+public void RowSort(int [][] matr){
 	
 	for (int k = 0; k < matr.length; k++)
 	for (int i = 0; i < matr[k].length-1; i++){
@@ -46,7 +46,49 @@ public void matrixRowSort(int [][] matr){
     }
 }
 
+public void moveUp(int [][] matr){
+	
+	int [] temp = new int[matr.length];
+	int i=0;
+	temp=matr[0];
+	for(;i<matr.length-1;i++) matr[i]=matr[i+1];
+	
+	matr[i]=temp;
+}
 
+public void moveDown(int [][] matr){
+	
+	int [] temp = new int[matr.length];
+	
+	temp=matr[matr.length-1];
+	for(int i=matr.length-1;i>0;i--) matr[i]=matr[i-1];
+	
+	matr[0]=temp;
+}
 
+public void moveRight(int [][] matr){
+	
+	int temp;
+	for(int i=0;i<matr.length-1;i++) 
+	{
+		temp = matr[i][matr[i].length-1];
+		for(int j=matr[i].length-1;j>0;j--) matr[i][j]=matr[i][j-1];
+		matr[i][0]=temp;
+	}
+	
+}
+
+public void moveLeft(int [][] matr){
+	
+	int temp;
+	for(int i=0;i<matr.length-1;i++) 
+	{
+		int j=0;
+		temp = matr[i][0];
+		for(;j<matr[i].length-1;j++) matr[i][j]=matr[i][j+1];
+		matr[i][j]=temp;
+	}
+	
+}
 
 }
