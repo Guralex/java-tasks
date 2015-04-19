@@ -63,8 +63,8 @@ public class Main {
 		 matr.Print(m);
 		 System.out.println("-----------------------------");
 		 
-		 matr.minusAverage(m);
-		 matr.Print(m);
+		 matr.logestIncrStreak(m);
+		 
 		
 		
 	 }

@@ -97,17 +97,44 @@ public void moveLeft(int [][] matr,int num){
 	
 }
 
-public void rotateNinety(int [][] matr,int num){
+public void logestIncrStreak(int [][] matr){ //----????????????????
 	
-	for(int a=0;a<num;a++){ 
-		int[] temp;
-		for(int i=0;i<matr.length-1;i++) 
-		{
-			for(int j=0;i<matr[i].length-1;j++) 
-			{
-				matr[i][j]=matr[j][matr[i].length-1-j];
-			}	
-		}}
+	int[] start={0,0};
+	int streak=1,maxstreak=1;
+	
+	for (int i = 0; i < matr.length-1; i++)
+		for (int j = 0; j < matr[i].length-1; j++){
+			
+			if(matr[i+1][j+1]>matr[i][j]) {streak++;continue;}
+			
+				if(streak>maxstreak){maxstreak=streak;start[0]=i+1;start[1]=j+1;}
+				streak=1;
+				
+			
+			
+		}
+	
+	System.out.println("MAXstreak- "+ maxstreak+" Startfrom " + matr[start[0]][start[1]]);
+	
+
+
+			
+}
+
+public void rotateNinety(int [][] matr){
+	
+	for (int k=0; k<matr.length/2; k++) 
+    {
+        for (int j=k; j<matr.length-1-k; j++)
+        {
+          
+            int tmp = matr[k][j];
+            matr[k][j] = matr[j][matr.length-1-k];
+            matr[j][matr.length-1-k] = matr[matr.length-1-k][matr.length-1-j];
+            matr[matr.length-1-k][matr.length-1-j] = matr[matr.length-1-j][k];
+            matr[matr.length-1-j][k] = tmp;
+        }
+    }
 	
 }
 
@@ -149,7 +176,7 @@ public void minusAverage(int [][] matr){
 	
 }
 
-public void deleteZer(int [][] matr){
+public void deleteZer(int [][] matr){ ////--------??????????????
 	
 	int[] rowtodel = new int[matr.length],celtodel = new int[matr.length];
 	int c1=0,c2=0;
