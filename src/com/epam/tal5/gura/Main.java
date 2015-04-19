@@ -5,14 +5,16 @@ import java.util.Arrays;
 public class Main {
 
 	 public static void main(String[] args){
+		 
+		 Labs lab=new Labs();
 	
-		 Methods met= new Methods();
+	//	 Methods met= new Methods();
 		 
-		 Sort sort=new Sort();
+//		 Sort sort=new Sort();
 		 
-		 Matrix matr = new Matrix();
+	//	 Matrix matr = new Matrix();
 		 
-		 int[][] m = matr.Init(args);
+	//	 int[][] m = matr.Init(args);
 		 
 	//System.out.println(met.greet(args));
 	
@@ -60,13 +62,17 @@ public class Main {
 		 System.out.println("BUB TIME -"+(aft-bef));*/
 		 
 		 
-		 matr.Print(m);
-		 System.out.println("-----------------------------");
+		// matr.Print(m);
+		// System.out.println("-----------------------------");
 		 
-		 matr.logestIncrStreak(m);
+		// matr.logestIncrStreak(m);
 		 
+		int mas[]={0,1,2,3,4};
+		System.out.println(Arrays.toString(mas));
 		
+		lab.invert(mas);
 		
+		System.out.println(Arrays.toString(mas));
 	 }
 	
 	
