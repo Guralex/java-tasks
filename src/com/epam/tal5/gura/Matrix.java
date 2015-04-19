@@ -97,4 +97,81 @@ public void moveLeft(int [][] matr,int num){
 	
 }
 
+public void rotateNinety(int [][] matr,int num){
+	
+	for(int a=0;a<num;a++){ 
+		int[] temp;
+		for(int i=0;i<matr.length-1;i++) 
+		{
+			for(int j=0;i<matr[i].length-1;j++) 
+			{
+				matr[i][j]=matr[j][matr[i].length-1-j];
+			}	
+		}}
+	
+}
+
+public int sumFSEvenEl(int [][] matr){
+	
+	int count,currsum,sum=0;
+	
+	for (int i = 0; i < matr.length; i++){
+        currsum=0;
+		count=0;
+		for (int j = 0; j < matr[i].length; j++){
+			if(count==2) break;
+			if(matr[i][j]%2==0) {count++;continue;}
+        	if(count==1) currsum+=matr[i][j];
+        	
+        }
+		if(count==1)currsum=0;
+		System.out.println("Row"+i+" - "+currsum);
+		sum+=currsum;
+	}
+	
+	return sum;
+}
+
+public void minusAverage(int [][] matr){
+	
+	int aver;
+	
+	for (int i = 0; i < matr.length; i++)
+	{
+		aver=0;
+		for (int j = 0; j < matr[i].length; j++){
+			aver+=matr[i][j];
+			}
+		aver=aver/matr[i].length;
+		System.out.println("AVER="+aver);
+		for (int j = 0; j < matr[i].length; j++)matr[i][j]-=aver;
+	}
+	
+}
+
+public void deleteZer(int [][] matr){
+	
+	int[] rowtodel = new int[matr.length],celtodel = new int[matr.length];
+	int c1=0,c2=0;
+	for (int i = 0; i < matr.length; i++)
+	{
+		if(matr[i][i]!=0) continue;
+		for(int j=0;j<matr[i].length;j++)
+		{
+			if(matr[i][j]!=0) break;
+			if(j==matr[i].length-1) {rowtodel[c1]=i;c1++;}
+		}
+		for(int j=0;j<matr[i].length;j++)
+		{
+			if(matr[j][i]!=0) break;
+			if(j==matr[i].length-1) {celtodel[c2]=i;c2++;}
+		}
+	}
+	
+	int [][]  newmat = new int[matr.length-c1][matr.length-c2];
+	
+	
+}
+
+
 }

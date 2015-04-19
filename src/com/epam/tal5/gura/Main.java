@@ -63,12 +63,9 @@ public class Main {
 		 matr.Print(m);
 		 System.out.println("-----------------------------");
 		 
-		 matr.moveLeft(m,2);
-		 matr.moveRight(m,2);
-		 matr.moveUp(m,2);
-		 matr.moveDown(m,2);
-		 
+		 matr.minusAverage(m);
 		 matr.Print(m);
+		
 		
 	 }
 	
