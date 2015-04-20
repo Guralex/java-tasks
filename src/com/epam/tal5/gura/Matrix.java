@@ -6,7 +6,7 @@ public class Matrix {
 
 
 	
-	
+	//----9
 public int[][] Init(String[] args){
 		
 		
@@ -32,6 +32,7 @@ public void Print(int [][] matr){
 	
 }
 
+//---9.1
 public void RowSort(int [][] matr){
 	
 	for (int k = 0; k < matr.length; k++)
@@ -46,6 +47,7 @@ public void RowSort(int [][] matr){
     }
 }
 
+//------9-2
 public void moveUp(int [][] matr,int num){
 	
 	for(int a=0;a<num;a++){ 
@@ -97,29 +99,44 @@ public void moveLeft(int [][] matr,int num){
 	
 }
 
-public void logestIncrStreak(int [][] matr){ //----????????????????
+
+//------9.3
+public void logestIncrStreak(int [][] matr){ //----выглядит ужасно. но оно работает
 	
-	int[] start={0,0};
+	int[] start={0,0},maxstart={0,0};
 	int streak=1,maxstreak=1;
 	
-	for (int i = 0; i < matr.length-1; i++)
-		for (int j = 0; j < matr[i].length-1; j++){
-			
-			if(matr[i+1][j+1]>matr[i][j]) {streak++;continue;}
-			
-				if(streak>maxstreak){maxstreak=streak;start[0]=i+1;start[1]=j+1;}
-				streak=1;
-				
-			
-			
+	for (int i = 0; i < matr.length; i++)
+		for (int j = 0; j < matr[i].length; j++){
+			if(j==matr[i].length-1 && i==matr.length-1) break;
+			if(j==matr[i].length-1 && i!=matr.length-1) {if(matr[i][j]<matr[i+1][0]){streak++; continue;}}
+			else {if(matr[i][j]<matr[i][j+1]){streak++; continue;}}
+			if(streak>maxstreak) {maxstreak=streak;maxstart[0]=start[0];maxstart[1]=start[1];}
+			start[0]=i; start[1]=j;
+			streak=1;
+					
 		}
+
+
+			int c= maxstreak,t=0;
+			
+	for (int i = 0; i < matr.length; i++)
+		for (int j = 0; j < matr[i].length; j++){
+		
+			if(i==maxstart[0]&&j==maxstart[1]+1)t++;
+			if(t==1&&c>0){System.out.print(matr[i][j]+" ");c--;}
+		
+		}
+			
+	System.out.println("MAXstreak- "+ maxstreak);
 	
-	System.out.println("MAXstreak- "+ maxstreak+" Startfrom " + matr[start[0]][start[1]]);
 	
 
 
 			
 }
+
+//------9.5
 
 public void rotateNinety(int [][] matr){
 	
@@ -137,6 +154,8 @@ public void rotateNinety(int [][] matr){
     }
 	
 }
+
+//------9.4
 
 public int sumFSEvenEl(int [][] matr){
 	
@@ -159,6 +178,8 @@ public int sumFSEvenEl(int [][] matr){
 	return sum;
 }
 
+//------9.6
+
 public void minusAverage(int [][] matr){
 	
 	int aver;
@@ -176,28 +197,73 @@ public void minusAverage(int [][] matr){
 	
 }
 
-public void deleteZer(int [][] matr){ ////--------??????????????
+//------9.7
+
+public int[][] deleteZer(int [][] matr){ ////NOT OK =(
 	
-	int[] rowtodel = new int[matr.length],celtodel = new int[matr.length];
-	int c1=0,c2=0;
+	int c=0;
+	for (int i = 0; i < matr.length; i++)
+		{
+			for (int j = 0; j < matr[i].length; j++)
+			{
+				if(matr[i][j]!=0) break;
+				if(j==matr[i].length-1){c++;matr[i][0]=-1;}
+			}
+		}
+	int [][] newmatr = new int[matr.length-c][matr.length];
 	for (int i = 0; i < matr.length; i++)
 	{
-		if(matr[i][i]!=0) continue;
-		for(int j=0;j<matr[i].length;j++)
-		{
-			if(matr[i][j]!=0) break;
-			if(j==matr[i].length-1) {rowtodel[c1]=i;c1++;}
-		}
-		for(int j=0;j<matr[i].length;j++)
-		{
-			if(matr[j][i]!=0) break;
-			if(j==matr[i].length-1) {celtodel[c2]=i;c2++;}
-		}
+			
+		if(matr[i][0]!=-1)
+			for (int j = 0; j < matr[i].length; j++){
+				
+				newmatr[i][j]=matr[i][j];
+				
+			}
 	}
 	
-	int [][]  newmat = new int[matr.length-c1][matr.length-c2];
+	return newmatr;
+	
+}
+
+//------9.8
+
+public void zeroToTheEnd(int [][] matr){
+	
+	for (int i = 0; i < matr.length; i++)
+		for (int j = 0; j < matr[i].length; j++){
+			
+			if(matr[i][j]==0){
+				
+				for (int k = j; k < matr[i].length-1; k++) matr[i][k]=matr[i][k+1];
+				matr[i][matr[i].length-1]=0;
+				
+				}
+			
+		}
+	
+}
+
+public int[][] mMul(int [][] matr1,int [][] matr2){
 	
 	
+    if (matr1[0].length !=  matr2.length)
+    {
+        System.out.println ("Error");
+    }
+    int[][] resultat = new int[matr1.length][matr2[0].length];  
+    for(int i=0; i<matr1.length; i++)
+    {
+        for(int j=0; j<matr2[0].length; j++)
+        {
+            resultat[i][j] = 0;
+            for (int s=0; s<matr1[0].length; s++)
+            {
+                resultat[i][j] += matr1[i][s] * matr2[s][j];
+            }
+        }
+    }
+    return resultat;
 }
 
 

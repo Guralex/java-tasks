@@ -12,9 +12,11 @@ public class Main {
 		 
 //		 Sort sort=new Sort();
 		 
-	//	 Matrix matr = new Matrix();
+		 Matrix matr = new Matrix();
 		 
-	//	 int[][] m = matr.Init(args);
+		 int[][] m = matr.Init(args);
+		 int[][]testm = {{8,7,6,5},{0,0,0,0},{10,11,6,6},{6,6,6,6}};
+	
 		 
 	//System.out.println(met.greet(args));
 	
@@ -62,17 +64,12 @@ public class Main {
 		 System.out.println("BUB TIME -"+(aft-bef));*/
 		 
 		 
-		// matr.Print(m);
-		// System.out.println("-----------------------------");
+		matr.Print(testm);
+		 System.out.println("-----------------------------");
 		 
-		// matr.logestIncrStreak(m);
 		 
-		int mas[]={0,1,2,3,4};
-		System.out.println(Arrays.toString(mas));
+		 matr.Print(matr.deleteZer(testm));
 		
-		lab.invert(mas);
-		
-		System.out.println(Arrays.toString(mas));
 	 }
 	
 	

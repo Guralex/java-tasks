@@ -41,12 +41,14 @@ public class Methods {
 	
 	
 	//-------TASK1
+	
+	//----1
 	public String greet(String[] args){
 		
 		
 		return "Hello,"+args[0];
 	}
-
+	//----2
 	public String backorder(String[] args){
 		
 		String a="";
@@ -55,8 +57,7 @@ public class Methods {
 			
 		return a;
 	}
-	
-	
+	//----3	
 	public String randWithNewline(String[] args){
 		
 		String res="";
@@ -70,8 +71,7 @@ public class Methods {
 		
 		return res;
 	}
-	
-	
+	//----4
 	public String checkPass(String[] args){
 		
 		System.out.println("Pass is 123");
@@ -82,12 +82,13 @@ public class Methods {
 	}
 	
 	
+	//----6.1-6.4
 	public void aLotOfTasks(String[] args){
 		
 		//----------------------------------
 		int[] mas = parseArgs(args);
-		//1----------------------------------
 		
+		//----6.1
 		String res1="",res2="";
 		for(int i=0;i<mas.length; i++)
 		{
@@ -97,7 +98,7 @@ public class Methods {
 		System.out.println("EVEN:"+res1);
 		System.out.println("UNEVEN:"+res2);
 		
-		//2----------------------------------
+		//----6.2
 		int min=Integer.MAX_VALUE,max=Integer.MIN_VALUE;
 		for(int i=0;i<mas.length; i++)
 		{
@@ -107,8 +108,7 @@ public class Methods {
 		System.out.println("MAX:"+max);
 		System.out.println("MIN:"+min);
 	
-		//3-4---------------------------------
-		
+		////----6.3-4
 		String res3="",res4="";
 		for(int i=0;i<mas.length; i++)
 		{
@@ -118,11 +118,11 @@ public class Methods {
 		System.out.println("DIV3or9:"+res3);
 		System.out.println("DIV5%7:"+res4);
 		
-		//5----------------------------------
+		
 		
 	}
 	
-		
+	//----6.5-6.6	
 	public void numberWork(String[] args){
 	//-------------	
 		int[] mas = parseArgs(args);
@@ -173,6 +173,7 @@ public class Methods {
 		
 	}
 
+	//----6.7
 	public void halfSum(String[] args){
 		
 		int[] mas = parseArgs(args);
@@ -191,6 +192,7 @@ public class Methods {
 	
 	//-------TASK2
 
+	//----1
 	public void shortAndLongNum(String[] args){
 		
 		int[] mas = parseArgs(args);
@@ -217,7 +219,7 @@ public class Methods {
 		
 	}
 	
-	
+	//----2
 	public void sortBySize(String[] args){
 		
 		int[] mas = parseArgs(args);
