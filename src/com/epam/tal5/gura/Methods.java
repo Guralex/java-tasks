@@ -248,7 +248,106 @@ public class Methods {
 	}
 
 	
+	//---3
+	
+public void moreThanAver(String[] args){
+		
+		int[] mas = parseArgs(args);
+		int[][] res = new int[mas.length][];			
+		
+		
+		for(int i=0;i<mas.length; i++)
+		{
+			res[i] = parseNum(mas[i]);
+		}
+		
+		
+		int aver=0;
+		
+		for (int i = 0; i < res.length-1; i++){
+	       aver+=res[i].length;
+	    }
+		
+		aver=aver/res.length;
+		System.out.println("Aver- " + aver);
+		for (int i = 0; i < res.length-1; i++){
+		      if(res[i].length>aver) System.out.println(args[i]+" - "+res[i].length);;
+		    }
+		
+		
+	}
+	
+	//---4????
+
+public void minNumbers(String[] args){
+	int[] mas = parseArgs(args);
+	int[][] res = new int[mas.length][];			
 	
 	
+	for(int i=0;i<mas.length; i++)
+	{
+		res[i] = parseNum(mas[i]);
+	}
 	
+	int result ;
+	
+	for (int i = 0; i < res.length-1; i++){
+     
+		if(res[i].length==0) {result =mas[i];break;}
+		for (int j = i+1; j < res[i].length; j++);
+	}
+}
+
+	//---5
+public void evenWithUneven(String[] args){
+	
+	int[] mas = parseArgs(args);
+	int[][] res = new int[mas.length][];			
+	
+	
+	for(int i=0;i<mas.length; i++)
+	{
+		res[i] = parseNum(mas[i]);
+	}
+	
+	int result=0;
+	
+	for(int i=0;i<res.length; i++)
+	{
+		int ev=0;
+		if(mas[i]%2==0 && res[i].length%2==0){
+			for(int j=0;j<res[i].length; j++){
+				if(res[i][j]%2==0)ev++;
+			}
+			if(ev==res[i].length/2){ result++;System.out.println(mas[i]);}
+		}
+	}
+	
+	System.out.println("Total- "+result);
+	
+}
+
+	//---6
+public void straightInc(String[] args){
+	
+	int[] mas = parseArgs(args);
+	int[][] res = new int[mas.length][];			
+	
+	
+	for(int i=0;i<mas.length; i++)
+	{
+		
+		res[i] = parseNum(mas[i]);
+	}
+
+	for(int i=0;i<res.length; i++){
+		if(res[i].length==1) continue;
+		for(int j=0;j<res[i].length-1;){
+			if(res[i][j]>=res[i][++j]) break;
+			if(j==res[i].length-1){System.out.println(mas[i]); break;}
+		}
+		
+	}
+}
+
 }

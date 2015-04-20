@@ -8,7 +8,7 @@ public class Main {
 
 		Labs lab = new Labs();
 
-		// Methods met= new Methods();
+		 Methods met= new Methods();
 
 		// Sort sort=new Sort();
 
@@ -49,11 +49,13 @@ public class Main {
 		 * System.nanoTime(); System.out.println("BUB TIME -"+(aft-bef));
 		 */
 
-		matr.Print(testm);
+		/*matr.Print(testm);
 		System.out.println("-----------------------------");
 
 		matr.Print(matr.deleteZer(testm));
-
+*/
+		
+		met.straightInc(args);
 	}
 
 }
