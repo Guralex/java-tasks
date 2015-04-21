@@ -55,7 +55,7 @@ public class Main {
 		matr.Print(matr.deleteZer(testm));
 */
 		
-		met.straightInc(args);
+		met.varNumbers(args);
 	}
 
 }

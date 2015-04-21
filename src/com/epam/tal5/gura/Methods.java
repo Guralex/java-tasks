@@ -279,7 +279,7 @@ public void moreThanAver(String[] args){
 		
 	}
 	
-	//---4????
+	//---4
 
 public void minNumbers(String[] args){
 	int[] mas = parseArgs(args);
@@ -291,13 +291,19 @@ public void minNumbers(String[] args){
 		res[i] = parseNum(mas[i]);
 	}
 	
-	int result ;
+	int result = 0,numquant,minnumquant=1;
 	
 	for (int i = 0; i < res.length-1; i++){
      
-		if(res[i].length==0) {result =mas[i];break;}
-		for (int j = i+1; j < res[i].length; j++);
+		numquant=0;
+		if(res[i].length==1) {result =mas[i];break;}
+		
+		for (int j = i+1; j < res[i].length; j++){if(res[i][0]!=res[i][j]) numquant++;}
+		if(minnumquant<numquant){ minnumquant=numquant;result=mas[i];}
 	}
+	
+	System.out.println("MinNums: "+result+" quant is "+minnumquant);
+	
 }
 
 	//---5
@@ -352,4 +358,32 @@ public void straightInc(String[] args){
 	}
 }
 
+	//--7
+public void varNumbers(String[] args){
+
+	int[] mas = parseArgs(args);
+	int[][] res = new int[mas.length][];			
+	
+	
+	for(int i=0;i<mas.length; i++)
+	{
+		
+		res[i] = parseNum(mas[i]);
+	}
+	
+	int result=0,t;
+
+	for(int i=0;i<res.length; i++){
+		
+		t=0;
+		if(res[i].length==1){result =mas[i];break;}
+		if(res[i].length>10) continue;
+		for (int k = 0; k < res[i].length-1; k++)
+	        for (int j = k+1; j < res[i].length; j++) if(res[i][k]==res[i][j]) t++;
+		
+		if(t==0){result=mas[i];break;}
+	}
+	
+	System.out.println("Various nums "+result);
+	}
 }
